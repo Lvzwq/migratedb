@@ -3,6 +3,7 @@
 from helper.model import Model
 from config import migrate_db_dict, ads_offline_db_dict
 import time
+
 """"
 mysql数据库迁移
 """
