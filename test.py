@@ -1,6 +1,6 @@
 #!/usr/bin/python env
 # coding: utf-8
-from helper.model import Model
+from helper.model import DBConnection
 from config import migrate_db_dict, ads_offline_db_dict
 import time
 
@@ -21,11 +21,11 @@ if __name__ == "__main__":
     # 配置
     print migrate_db_dict, ads_offline_db_dict
     # 迁移数据库
-    model = Model(**migrate_db_dict)
+    model = DBConnection(**migrate_db_dict)
     # model.table_name = "UnionKeyWord"
 
     # 广告线下数据库
-    model_v2 = Model(**ads_offline_db_dict)
+    model_v2 = DBConnection(**ads_offline_db_dict)
     # model_v2.table_name = "UnionKeyWord"
 
     # 显示所有数据表

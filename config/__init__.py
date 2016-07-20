@@ -11,10 +11,15 @@ config_path = os.path.join(root, "config")
 config = ConfigParser()
 config.read(os.path.join(config_path, "db.conf"))
 
-
 # 要迁移的数据库
 migrate_db_dict = dict(config.items("migrate_db"))
 migrate_db_dict["port"] = int(migrate_db_dict["port"])
 # 广告线下数据库
 ads_offline_db_dict = dict(config.items("db"))
 ads_offline_db_dict["port"] = int(ads_offline_db_dict["port"])
+
+
+# 同步CpcFinanceDetail
+finance_dict = dict(config.items("dev_db"))
+finance_dict["port"] = int(finance_dict["port"])
+

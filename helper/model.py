@@ -3,7 +3,7 @@
 import MySQLdb
 
 
-class Model(object):
+class DBConnection(object):
     # conn = None
     """
     数据库操作工具类
@@ -15,8 +15,8 @@ class Model(object):
         self._kwargs["host"] = kwargs.get("host", "127.0.0.1")
         self._kwargs["port"] = kwargs.get("port", 3306)
         self._kwargs["user"] = kwargs.get("user", "root")
-        self._kwargs["passwd"] = kwargs.get("passwd", "")
-        self._kwargs["db"] = kwargs.get("db", "unionbusiness")
+        self._kwargs["passwd"] = kwargs.get("passwd", "root")
+        self._kwargs["db"] = kwargs.get("db", "test")
         self._plain_sql = ""
         self.conn = None
         self.conn = self.connect(**self._kwargs)
